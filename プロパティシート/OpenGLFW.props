@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <GLUT_INSTALL_DIR>C:\dev\freeglut</GLUT_INSTALL_DIR>
+    <GLFW_INSTALL_DIR>C:\dev\glfw</GLFW_INSTALL_DIR>
+    <GLEW_INSTALL_DIR>C:\dev\glew</GLEW_INSTALL_DIR>
+    <GLPNG_INSTALL_DIR>C:\dev\glpng</GLPNG_INSTALL_DIR>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ExecutablePath>$(GLFW_INSTALL_DIR)\lib;$(GLEW_INSTALL_DIR)\lib;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="GLUT_INSTALL_DIR">
+      <Value>$(GLUT_INSTALL_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLFW_INSTALL_DIR">
+      <Value>$(GLFW_INSTALL_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLEW_INSTALL_DIR">
+      <Value>$(GLEW_INSTALL_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLPNG_INSTALL_DIR">
+      <Value>$(GLPNG_INSTALL_DIR)</Value>
+    </BuildMacro>
+  </ItemGroup>
+
+  <!-- Win32 -->
+  <PropertyGroup Condition="'$(Platform)'=='Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>
+        $(GLUT_INSTALL_DIR)\include;
+        $(GLFW_INSTALL_DIR)\include;
+        $(GLEW_INSTALL_DIR)\include;
+        $(GLPNG_INSTALL_DIR)\include;
+        %(AdditionalIncludeDirectories)
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories Condition="'$(VisualStudioVersion)'=='12.0'">
+        $(GLUT_INSTALL_DIR)\lib;
+        $(GLFW_INSTALL_DIR)\lib\x86\vc12;
+        $(GLEW_INSTALL_DIR)\lib;
+        $(GLEW_INSTALL_DIR)\lib\Release\Win32;
+        $(GLPNG_INSTALL_DIR)\lib;
+        %(AdditionalLibraryDirectories)
+      </AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(VisualStudioVersion)'=='14.1'">
+        $(GLUT_INSTALL_DIR)\lib;
+        $(GLFW_INSTALL_DIR)\lib\x86\vc15;
+        $(GLEW_INSTALL_DIR)\lib;
+        $(GLEW_INSTALL_DIR)\lib\Release\Win32;
+        $(GLPNG_INSTALL_DIR)\lib;
+        %(AdditionalLibraryDirectories)
+      </AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(VisualStudioVersion)'=='15.0'">
+        $(GLUT_INSTALL_DIR)\lib;
+        $(GLFW_INSTALL_DIR)\lib\x86\vc15;
+        $(GLEW_INSTALL_DIR)\lib;
+        $(GLEW_INSTALL_DIR)\lib\Release\Win32;
+        $(GLPNG_INSTALL_DIR)\lib;
+        %(AdditionalLibraryDirectories)
+      </AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <!-- x64 -->
+  <PropertyGroup Condition="'$(Platform)'=='x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>
+        $(GLUT_INSTALL_DIR)\include;
+        $(GLFW_INSTALL_DIR)\include;
+        $(GLEW_INSTALL_DIR)\include;
+        $(GLPNG_INSTALL_DIR)\include;
+        %(AdditionalIncludeDirectories)
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories Condition="'$(VisualStudioVersion)'=='12.0'">
+        $(GLUT_INSTALL_DIR)\lib;
+        $(GLFW_INSTALL_DIR)\lib\x64\vc12;
+        $(GLEW_INSTALL_DIR)\lib;
+        $(GLEW_INSTALL_DIR)\lib\Release\x64;
+        $(GLPNG_INSTALL_DIR)\lib;
+        %(AdditionalLibraryDirectories)
+      </AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(VisualStudioVersion)'=='14.1'">
+        $(GLUT_INSTALL_DIR)\lib;
+        $(GLFW_INSTALL_DIR)\lib\x64\vc15;
+        $(GLEW_INSTALL_DIR)\lib;
+        $(GLEW_INSTALL_DIR)\lib\Release\x64;
+        $(GLPNG_INSTALL_DIR)\lib;
+        %(AdditionalLibraryDirectories)
+      </AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(VisualStudioVersion)'=='15.0'">
+        $(GLUT_INSTALL_DIR)\lib;
+        $(GLFW_INSTALL_DIR)\lib\x64\vc15;
+        $(GLEW_INSTALL_DIR)\lib;
+        $(GLEW_INSTALL_DIR)\lib\Release\x64;
+        $(GLPNG_INSTALL_DIR)\lib;
+        %(AdditionalLibraryDirectories)
+      </AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+</Project>

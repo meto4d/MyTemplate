@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+<!--Win32-->
+  <ItemDefinitionGroup Condition="'$(Platform)'=='Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>
+        C:\dev\freeglut\include;
+        C:\dev\glfw\include;
+        C:\dev\glew\include;
+        C:\dev\glext\include;
+        C:\dev\glpng\include;
+        %(AdditionalIncludeDirectories)
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>
+        C:\dev\freeglut\lib\x86;
+        C:\dev\glfw\lib-vc2013;
+        C:\dev\glew\lib\;
+        C:\dev\glext\lib;
+        C:\dev\glpng\lib;
+        %(AdditionalLibraryDirectories)
+      </AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+<!--x64-->
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>
+        C:\dev\freeglut\include;
+        C:\dev\glfw\include;
+        C:\dev\glew\include;
+        C:\dev\glext\include;
+        C:\dev\glpng\include;
+        %(AdditionalIncludeDirectories)
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>
+        C:\dev\freeglut\lib\x64;
+        C:\dev\glfw\lib-vc2013;
+        C:\dev\glew\lib\;
+        C:\dev\glext\lib;
+        C:\dev\glpng\lib;
+        %(AdditionalLibraryDirectories)
+      </AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <DLIB_INSTALL_DIR>C:\dev\dlib\dlib-19.16</DLIB_INSTALL_DIR>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Platform)|$(VisualStudioVersion)'=='Win32|15.0'">
+    <ExecutablePath>$(DLIB_INSTALL_DIR)\lib\vc15\x86;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)|$(VisualStudioVersion)'=='x64|15.0'">
+    <ExecutablePath>$(DLIB_INSTALL_DIR)\lib\vc15\x64;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <!-- Win32 -->
+  <PropertyGroup Condition="'$(Platform)'=='Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(DLIB_INSTALL_DIR)\dlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+	<Link>
+      <AdditionalLibraryDirectories Condition="'$(VisualStudioVersion)'=='15.0'">$(DLIB_INSTALL_DIR)\lib\vc15\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <!-- x64 -->
+  <PropertyGroup Condition="'$(Platform)'=='x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(DLIB_INSTALL_DIR)\dlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+	<Link>
+      <AdditionalLibraryDirectories Condition="'$(VisualStudioVersion)'=='15.0'">$(DLIB_INSTALL_DIR)\lib\vc15\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  
+  <ItemGroup>
+    <BuildMacro Include="DLIB_INSTALL_DIR">
+      <Value>$(DLIB_INSTALL_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

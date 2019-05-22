@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <DLIB_INSTALL_DIR>C:\dev\dlib\dlib-19.16\install</DLIB_INSTALL_DIR>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <ExecutablePath>$(DLIB_INSTALL_DIR)\lib;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(DLIB_INSTALL_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+	<Link>
+      <AdditionalLibraryDirectories>$(DLIB_INSTALL_DIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  
+  <ItemGroup>
+    <BuildMacro Include="DLIB_INSTALL_DIR">
+      <Value>$(DLIB_INSTALL_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
